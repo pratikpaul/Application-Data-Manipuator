@@ -1,0 +1,7 @@
+package com.hcl.appData.behaviour;
+
+import org.hibernate.SessionFactory;
+
+public interface TransBehaviour<T> {
+	public void act(SessionFactory factory, T... obj);
+}

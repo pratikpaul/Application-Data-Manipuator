@@ -1,0 +1,83 @@
+package com.self.appData.dto;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+
+@Entity
+@Table(name = "ACCESS_PRIVILEGES")
+public class AccessPrivileges implements Serializable{
+	@Id
+	@GenericGenerator(name = "custominc", strategy = "increment")
+	@GeneratedValue(generator = "custominc")
+	private int access_id;
+	private String access_type;
+	private String created_by;
+	private Date creation_date;
+	private String modified_by;
+	private Date modification_date;
+	private int mark_delete;
+
+	public int getAccess_id() {
+		return access_id;
+	}
+
+	public void setAccess_id(int access_id) {
+		this.access_id = access_id;
+	}
+
+	public String getAccess_type() {
+		return access_type;
+	}
+
+	public void setAccess_type(String access_type) {
+		this.access_type = access_type;
+	}
+
+	public String getCreated_by() {
+		return created_by;
+	}
+
+	public void setCreated_by(String created_by) {
+		this.created_by = created_by;
+	}
+
+	public Date getCreation_date() {
+		return creation_date;
+	}
+
+	public void setCreation_date(Date creation_date) {
+		this.creation_date = creation_date;
+	}
+
+	public String getModified_by() {
+		return modified_by;
+	}
+
+	public void setModified_by(String modified_by) {
+		this.modified_by = modified_by;
+	}
+
+	public Date getModification_date() {
+		return modification_date;
+	}
+
+	public void setModification_date(Date modification_date) {
+		this.modification_date = modification_date;
+	}
+
+	public int getMark_delete() {
+		return mark_delete;
+	}
+
+	public void setMark_delete(int mark_delete) {
+		this.mark_delete = mark_delete;
+	}
+
+}
